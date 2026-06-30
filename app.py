@@ -216,7 +216,8 @@ DRUG_CATS = [c for c in ["Antipsychotics", "SSRIs/SNRIs", "Sedatives & anxiolyti
                          "Antihistamines & allergy", "Antibiotics", "Antifungals",
                          "Others"] if c in _all_cats]
 AGRO_CATS = [c for c in ["Insecticides", "Herbicides"] if c in _all_cats]
-CATEGORIES = BIO_CATS + DRUG_CATS + AGRO_CATS
+HETERO_CATS = [c for c in ["Heterocycles"] if c in _all_cats]
+CATEGORIES = BIO_CATS + DRUG_CATS + HETERO_CATS + AGRO_CATS
 DISPLAY = {"Others": "Other Drugs"}
 
 
@@ -479,6 +480,19 @@ with st.sidebar:
         st.session_state.setdefault("all_bio", True)
         st.session_state.setdefault("all_drugs", True)
 
+        # Global toggle: flips every category at once. The button renders before
+        # the checkboxes, so setting their state here (on click) is applied
+        # before those widgets are instantiated this run.
+        _all_on = all(st.session_state.get(f"cat_{c}", True) for c in CATEGORIES)
+        if st.button("Deselect all" if _all_on else "Select all",
+                     use_container_width=True, key="toggle_all_cats"):
+            _new = not _all_on
+            for c in CATEGORIES:
+                st.session_state[f"cat_{c}"] = _new
+            st.session_state["all_bio"] = _new
+            st.session_state["all_drugs"] = _new
+            st.rerun()
+
         def _apply_master(master_key, cats):
             on = st.session_state[master_key]
             for c in cats:
@@ -497,6 +511,10 @@ with st.sidebar:
         st.checkbox(f"**All Drugs** ({_group_count(DRUG_CATS)})", key="all_drugs",
                     on_change=_apply_master, args=("all_drugs", DRUG_CATS))
         for cat in DRUG_CATS:
+            _cat_box(cat)
+
+        st.caption("Heterocycles")
+        for cat in HETERO_CATS:
             _cat_box(cat)
 
         st.caption("Others")
@@ -721,11 +739,8 @@ else:
     if ss.last_guess:
         gm = Chem.MolFromSmiles(ss.last_guess)
         lvl = match_level(card["smiles"], gm)
-        if lvl == "exact":
-            st.success("Exact match \u2014 structure and stereochemistry. \U0001F9EA")
-        elif lvl == "constitution":
-            st.success("Right constitution! (Stereochemistry differs from the "
-                       "reference \u2014 fine for most flashcard purposes.)")
+        if lvl in ("exact", "constitution"):
+            st.success("Correct! \U0001F9EA")
         else:
             st.info(f"Tanimoto to target (ECFP4): **{tanimoto(tm, gm):.2f}**")
 
