@@ -106,7 +106,7 @@ Opioids (15), Stimulants (10), NSAIDs & analgesics (12), Statins (7),
 Antihistamines & allergy (16), Antibiotics (16), Antifungals (11), Others (13,
 for drugs that don't fit a class above — PPIs, anticoagulants, antihypertensives,
 a bronchodilator, an antiviral, etc.). Heterocycles (117, ring scaffolds — not tagged `Drugs`). Agrochemicals, also
-not tagged `Drugs`: Insecticides (18), Herbicides (18). 335 compounds total. Overlaps are
+not tagged `Drugs`: Insecticides (18), Herbicides (18). Functional groups (66, drawn with R/R1/R2 attachment points). Protecting groups (25). Vitamins (12, in Biochemistry). Heterocycles, Functional groups, and Protecting groups are grouped under 'Organic Chemistry'. 468 entries total. Overlaps are
 allowed where appropriate (e.g. tramadol is an opioid and an SNRI).
 
 ## Deploy on Streamlit Community Cloud

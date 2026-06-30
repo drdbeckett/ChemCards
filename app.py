@@ -55,35 +55,74 @@ def load_compounds():
         if "categories" not in c:
             c["categories"] = [c["category"]] if c.get("category") else []
         c["canonical"] = Chem.MolToSmiles(mol)
-        c["formula"] = rdMolDescriptors.CalcMolFormula(mol)
-        c["mw"] = round(Descriptors.MolWt(mol), 2)
+        c["is_fragment"] = any(a.GetAtomicNum() == 0 for a in mol.GetAtoms())
+        if c["is_fragment"]:
+            c["formula"] = ""        # an R-group fragment has no fixed formula
+            c["mw"] = None
+        else:
+            c["formula"] = rdMolDescriptors.CalcMolFormula(mol)
+            c["mw"] = round(Descriptors.MolWt(mol), 2)
         c["aliases"] = _aliases(c)
         out.append(c)
     return out
 
 
+_GREEK = {"\u03b1": "alpha", "\u03b2": "beta", "\u03b3": "gamma",
+          "\u03b4": "delta", "\u03b5": "epsilon", "\u03c9": "omega",
+          "\u03c3": "sigma", "\u03c4": "tau"}
+
+
+def _spell_greek(s: str) -> str:
+    for g, name in _GREEK.items():
+        s = s.replace(g, name)
+    return s
+
+
 def _norm(s: str) -> str:
-    return "".join(s.lower().split()).replace("-", "")
+    return "".join(s.lower().split()).replace("-", "").replace(",", "")
+
+
+def _norm_nonum(s: str) -> str:
+    """Normalized form with digits removed, for 'just missing the numbers' checks."""
+    return "".join(ch for ch in _norm(s) if not ch.isdigit())
 
 
 def _aliases(card) -> set:
-    """Acceptable answers: the name plus any token in `abbrev` (split on / and ,)."""
-    al = {_norm(card["name"])}
-    for tok in card.get("abbrev", "").replace(",", "/").split("/"):
-        tok = tok.strip()
-        if tok:
-            al.add(_norm(tok))
+    """Acceptable answers: the name plus any token in `abbrev` (split on / and ,).
+    Each is accepted both as written and with Greek letters spelled out, so
+    'beta-lactam', 'beta lactam', and '\u03b2-lactam' all match."""
+    al = set()
+    toks = [card["name"]] + [t.strip() for t in
+                             card.get("abbrev", "").replace(",", "/").split("/")
+                             if t.strip()]
+    for t in toks:
+        al.add(_norm(t))
+        al.add(_norm(_spell_greek(t)))
     return al
 
 
 @st.cache_data
 def render_structure(smiles: str, size: int = 420) -> bytes:
     mol = Chem.MolFromSmiles(smiles)
+    _label_r_groups(mol)
     d = rdMolDraw2D.MolDraw2DCairo(size, size)
     d.drawOptions().bondLineWidth = 2
     rdMolDraw2D.PrepareAndDrawMolecule(d, mol)
     d.FinishDrawing()
     return d.GetDrawingText()
+
+
+def _label_r_groups(mol) -> None:
+    """Draw dummy atoms as R (single attachment) or R1, R2, ... (by map number),
+    so functional-group fragments read naturally instead of showing '*'."""
+    if mol is None:
+        return
+    dummies = [a for a in mol.GetAtoms() if a.GetAtomicNum() == 0]
+    multi = len(dummies) > 1
+    for a in dummies:
+        mn = a.GetAtomMapNum()
+        a.SetAtomMapNum(0)  # otherwise RDKit also prints ":1" next to the label
+        a.SetProp("atomLabel", f"R{mn}" if (multi and mn) else "R")
 
 
 @st.cache_data
@@ -209,15 +248,16 @@ _all_cats = {cat for c in COMPOUNDS for cat in c["categories"]}
 # Sidebar groupings. "Drugs" is the meta-tag every drug also carries; it isn't a
 # filter checkbox of its own anymore (the subclasses below cover every drug), so
 # it's omitted here. "Others" is the drug-class catch-all, shown as "Other Drugs".
-BIO_CATS = [c for c in ["Amino acids", "Neurotransmitters", "Nucleobases"]
-            if c in _all_cats]
+BIO_CATS = [c for c in ["Amino acids", "Neurotransmitters", "Nucleobases",
+                        "Vitamins"] if c in _all_cats]
 DRUG_CATS = [c for c in ["Antipsychotics", "SSRIs/SNRIs", "Sedatives & anxiolytics",
-                         "Opioids", "Stimulants", "NSAIDs & analgesics", "Statins",
-                         "Antihistamines & allergy", "Antibiotics", "Antifungals",
-                         "Others"] if c in _all_cats]
+                         "Opioids", "Anesthetics", "Stimulants", "NSAIDs & analgesics",
+                         "Statins", "Antihistamines & allergy", "Antibiotics",
+                         "Antifungals", "Others"] if c in _all_cats]
+ORG_CATS = [c for c in ["Heterocycles", "Functional groups", "Protecting groups"]
+            if c in _all_cats]
 AGRO_CATS = [c for c in ["Insecticides", "Herbicides"] if c in _all_cats]
-HETERO_CATS = [c for c in ["Heterocycles"] if c in _all_cats]
-CATEGORIES = BIO_CATS + DRUG_CATS + HETERO_CATS + AGRO_CATS
+CATEGORIES = BIO_CATS + DRUG_CATS + ORG_CATS + AGRO_CATS
 DISPLAY = {"Others": "Other Drugs"}
 
 
@@ -479,6 +519,7 @@ with st.sidebar:
             st.session_state.setdefault(f"cat_{_c}", True)
         st.session_state.setdefault("all_bio", True)
         st.session_state.setdefault("all_drugs", True)
+        st.session_state.setdefault("all_org", True)
 
         # Global toggle: flips every category at once. The button renders before
         # the checkboxes, so setting their state here (on click) is applied
@@ -491,6 +532,7 @@ with st.sidebar:
                 st.session_state[f"cat_{c}"] = _new
             st.session_state["all_bio"] = _new
             st.session_state["all_drugs"] = _new
+            st.session_state["all_org"] = _new
             st.rerun()
 
         def _apply_master(master_key, cats):
@@ -513,8 +555,10 @@ with st.sidebar:
         for cat in DRUG_CATS:
             _cat_box(cat)
 
-        st.caption("Heterocycles")
-        for cat in HETERO_CATS:
+        st.caption("Organic Chemistry")
+        st.checkbox(f"**All Organic Chemistry** ({_group_count(ORG_CATS)})",
+                    key="all_org", on_change=_apply_master, args=("all_org", ORG_CATS))
+        for cat in ORG_CATS:
             _cat_box(cat)
 
         st.caption("Others")
@@ -651,9 +695,14 @@ if struct_front:
                     grade(True)
                     st.rerun()
                 else:
+                    nonum = {_norm_nonum(a) for a in card["aliases"]}
+                    g_nonum = _norm_nonum(guess_name)
                     ratio = difflib.SequenceMatcher(
                         None, _norm(guess_name), _norm(card["name"])).ratio()
-                    if ratio > 0.8:
+                    if g_nonum and g_nonum in nonum:
+                        st.warning("Close! We need some numbers! \U0001F522 "
+                                   "(check the position locants)")
+                    elif ratio > 0.8:
                         st.warning("So close \u2014 check your spelling and try again.")
                     else:
                         st.error("Not quite. Try again, or reveal the answer.")
@@ -668,7 +717,7 @@ if struct_front:
                 st.error(f"The answer is **{card['name']}**.")
             if card.get("abbrev"):
                 st.caption(card["abbrev"])
-            if show_hints:
+            if show_hints and card.get("formula"):
                 st.markdown(f"**{card['formula']}**  \u2022  MW {card['mw']}")
             st.code(card["canonical"], language=None)
 
@@ -744,10 +793,11 @@ else:
         else:
             st.info(f"Tanimoto to target (ECFP4): **{tanimoto(tm, gm):.2f}**")
 
-        gf = rdMolDescriptors.CalcMolFormula(gm)
-        st.markdown(f"Reference **{card['formula']}**  vs.  yours **{gf}**")
-        st.dataframe(formula_table(tm, gm), hide_index=True,
-                     use_container_width=True)
+        if not card.get("is_fragment"):
+            gf = rdMolDescriptors.CalcMolFormula(gm)
+            st.markdown(f"Reference **{card['formula']}**  vs.  yours **{gf}**")
+            st.dataframe(formula_table(tm, gm), hide_index=True,
+                         use_container_width=True)
         if lvl == "no":
             for line in descriptor_deltas(tm, gm):
                 if not line.startswith("\u2713"):
@@ -766,7 +816,7 @@ else:
         else:
             st.error("Here's the reference structure:")
         st.image(render_structure(card["smiles"]))
-        if show_hints:
+        if show_hints and card.get("formula"):
             st.markdown(f"**{card['formula']}**  \u2022  MW {card['mw']}")
         st.code(card["canonical"], language=None)
     elif not ss.last_guess:

@@ -577,7 +577,8 @@
     "smiles": "Cc1ncc2n1-c1ccc(Cl)cc1C(c1ccccc1F)=NC2",
     "categories": [
       "Drugs",
-      "Sedatives & anxiolytics"
+      "Sedatives & anxiolytics",
+      "Anesthetics"
     ],
     "abbrev": "Versed / Dormicum"
   },
@@ -712,7 +713,8 @@
     "smiles": "CN1CC[C@]23c4c5ccc(O)c4O[C@H]2[C@@H](O)C=C[C@H]3[C@H]1C5",
     "categories": [
       "Drugs",
-      "Opioids"
+      "Opioids",
+      "Anesthetics"
     ],
     "abbrev": "MS Contin / Kadian"
   },
@@ -1897,6 +1899,96 @@
     "abbrev": "aciclovir / Zovirax"
   },
   {
+    "name": "Repinatrabit",
+    "smiles": "C1C[C@H](CN(C1)C(=O)N)N(C2CC2)C(=O)NCC3=C(C=C(C=C3)OC(F)(F)F)F",
+    "categories": [
+      "Drugs",
+      "Others"
+    ],
+    "abbrev": "JNT-517"
+  },
+  {
+    "name": "Isoflurane",
+    "smiles": "FC(F)(F)C(Cl)OC(F)F",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": "Forane"
+  },
+  {
+    "name": "Nitrous oxide",
+    "smiles": "N#[N+][O-]",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": "N2O / laughing gas"
+  },
+  {
+    "name": "Sevoflurane",
+    "smiles": "FCOC(C(F)(F)F)C(F)(F)F",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": "Sevorane / Ultane"
+  },
+  {
+    "name": "Ketamine",
+    "smiles": "CNC1(c2ccccc2Cl)CCCCC1=O",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": "Ketalar"
+  },
+  {
+    "name": "Propofol",
+    "smiles": "CC(C)c1cccc(C(C)C)c1O",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": "Diprivan"
+  },
+  {
+    "name": "Bupivacaine",
+    "smiles": "CCCCN1CCCCC1C(=O)Nc1c(C)cccc1C",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": "Marcaine"
+  },
+  {
+    "name": "Lidocaine",
+    "smiles": "CCN(CC)CC(=O)Nc1c(C)cccc1C",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": "lignocaine / Xylocaine"
+  },
+  {
+    "name": "Procaine",
+    "smiles": "CCN(CC)CCOC(=O)c1ccc(N)cc1",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": "Novocaine"
+  },
+  {
+    "name": "Atropine",
+    "smiles": "CN1C2CCC1CC(C2)OC(=O)C(CO)c1ccccc1",
+    "categories": [
+      "Drugs",
+      "Anesthetics"
+    ],
+    "abbrev": ""
+  },
+  {
     "name": "Pyrrole",
     "smiles": "c1cc[nH]c1",
     "categories": [
@@ -2831,5 +2923,989 @@
       "Heterocycles"
     ],
     "abbrev": ""
+  },
+  {
+    "name": "2H-Pyran",
+    "smiles": "C1C=CC=CO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2H-pyran"
+  },
+  {
+    "name": "4H-Pyran",
+    "smiles": "O1C=CCC=C1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "4H-pyran"
+  },
+  {
+    "name": "Pyrylium",
+    "smiles": "c1ccc[o+]c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "pyranylium"
+  },
+  {
+    "name": "2H-Thiopyran",
+    "smiles": "C1C=CC=CS1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "thiine"
+  },
+  {
+    "name": "4H-Thiopyran",
+    "smiles": "S1C=CCC=C1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "3,4-Dihydro-2H-pyran",
+    "smiles": "C1CCC=CO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "DHP / dihydropyran"
+  },
+  {
+    "name": "2,3-Dihydrofuran",
+    "smiles": "C1CC=CO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "2,5-Dihydrofuran",
+    "smiles": "C1C=CCO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1-Pyrroline",
+    "smiles": "C1CCC=N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "3,4-dihydro-2H-pyrrole"
+  },
+  {
+    "name": "3-Pyrroline",
+    "smiles": "C1C=CCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2,5-dihydro-1H-pyrrole"
+  },
+  {
+    "name": "1,3-Dioxole",
+    "smiles": "C1OC=CO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Azepine",
+    "smiles": "C1=CC=CC=CN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1H-azepine"
+  },
+  {
+    "name": "Oxepine",
+    "smiles": "O1C=CC=CC=C1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "oxepin"
+  },
+  {
+    "name": "Thiepine",
+    "smiles": "S1C=CC=CC=C1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "thiepin"
+  },
+  {
+    "name": "Indolizidine",
+    "smiles": "C1CCN2CCCC2C1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "octahydroindolizine"
+  },
+  {
+    "name": "Quinolizidine",
+    "smiles": "C1CCN2CCCCC2C1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "octahydroquinolizine"
+  },
+  {
+    "name": "Chromene",
+    "smiles": "C1=Cc2ccccc2OC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2H-chromene / 2H-1-benzopyran"
+  },
+  {
+    "name": "Isochromene",
+    "smiles": "C1OC=Cc2ccccc21",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1H-isochromene"
+  },
+  {
+    "name": "Isoindoline",
+    "smiles": "C1NCc2ccccc21",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2,3-dihydro-1H-isoindole"
+  },
+  {
+    "name": "Phthalan",
+    "smiles": "C1OCc2ccccc21",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,3-dihydroisobenzofuran"
+  },
+  {
+    "name": "Alkene",
+    "smiles": "[*:1]C=C[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "olefin / C=C"
+  },
+  {
+    "name": "Alkyne",
+    "smiles": "[*:1]C#C[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "C≡C triple bond"
+  },
+  {
+    "name": "Phenyl",
+    "smiles": "[*:1]c1ccccc1",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "aryl / benzene ring"
+  },
+  {
+    "name": "Methyl",
+    "smiles": "[*:1]C",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "Me / R–CH3"
+  },
+  {
+    "name": "Ethyl",
+    "smiles": "[*:1]CC",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "Et / R–CH2CH3"
+  },
+  {
+    "name": "Propyl",
+    "smiles": "[*:1]CCC",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "n-propyl / Pr"
+  },
+  {
+    "name": "Cyclopropyl",
+    "smiles": "[*:1]C1CC1",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "cPr"
+  },
+  {
+    "name": "Cyclobutyl",
+    "smiles": "[*:1]C1CCC1",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "cBu"
+  },
+  {
+    "name": "Methoxy",
+    "smiles": "[*:1]OC",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "OMe / R–OCH3"
+  },
+  {
+    "name": "Ethoxy",
+    "smiles": "[*:1]OCC",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "OEt / R–OCH2CH3"
+  },
+  {
+    "name": "Isopropyl",
+    "smiles": "[*:1]C(C)C",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "iPr / isopropyl"
+  },
+  {
+    "name": "n-Butyl",
+    "smiles": "[*:1]CCCC",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "n-Bu / nBu"
+  },
+  {
+    "name": "Isobutyl",
+    "smiles": "[*:1]CC(C)C",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "iBu / isobutyl"
+  },
+  {
+    "name": "sec-Butyl",
+    "smiles": "[*:1]C(C)CC",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "sBu / sec-butyl"
+  },
+  {
+    "name": "tert-Butyl",
+    "smiles": "[*:1]C(C)(C)C",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "tBu / tert-butyl"
+  },
+  {
+    "name": "Vinyl",
+    "smiles": "[*:1]C=C",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "ethenyl / R–CH=CH2"
+  },
+  {
+    "name": "Allyl",
+    "smiles": "[*:1]CC=C",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "prop-2-en-1-yl / R–CH2CH=CH2"
+  },
+  {
+    "name": "Fluoro",
+    "smiles": "[*:1]F",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "fluoride / R–F"
+  },
+  {
+    "name": "Chloro",
+    "smiles": "[*:1]Cl",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "chloride / R–Cl"
+  },
+  {
+    "name": "Bromo",
+    "smiles": "[*:1]Br",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "bromide / R–Br"
+  },
+  {
+    "name": "Iodo",
+    "smiles": "[*:1]I",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "iodide / R–I"
+  },
+  {
+    "name": "Hydroxyl",
+    "smiles": "[*:1]O",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "alcohol / R–OH"
+  },
+  {
+    "name": "Ether",
+    "smiles": "[*:1]O[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–O–R"
+  },
+  {
+    "name": "Aldehyde",
+    "smiles": "[*:1]C=O",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–CHO / formyl"
+  },
+  {
+    "name": "Ketone",
+    "smiles": "[*:1]C(=O)[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "carbonyl / acyl / R–CO–R"
+  },
+  {
+    "name": "Carboxylic acid",
+    "smiles": "[*:1]C(=O)O",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–COOH / carboxyl"
+  },
+  {
+    "name": "Ester",
+    "smiles": "[*:1]C(=O)O[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–COO–R"
+  },
+  {
+    "name": "Acid anhydride",
+    "smiles": "[*:1]C(=O)OC(=O)[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "anhydride"
+  },
+  {
+    "name": "Acyl chloride",
+    "smiles": "[*:1]C(=O)Cl",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "acid chloride / R–COCl"
+  },
+  {
+    "name": "Amide",
+    "smiles": "[*:1]C(=O)N([*:2])[*:3]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "carboxamide / R–CO–NR2"
+  },
+  {
+    "name": "Carbonate ester",
+    "smiles": "[*:1]OC(=O)O[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "carbonate"
+  },
+  {
+    "name": "Peroxide",
+    "smiles": "[*:1]OO[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–O–O–R"
+  },
+  {
+    "name": "Acetal",
+    "smiles": "[*:1]C(O[*:2])O[*:3]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Primary amine",
+    "smiles": "[*:1]N",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–NH2"
+  },
+  {
+    "name": "Secondary amine",
+    "smiles": "[*:1]N[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R2NH"
+  },
+  {
+    "name": "Tertiary amine",
+    "smiles": "[*:1]N([*:2])[*:3]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R3N"
+  },
+  {
+    "name": "Imine",
+    "smiles": "[*:1]C=N[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "Schiff base / C=N"
+  },
+  {
+    "name": "Nitrile",
+    "smiles": "[*:1]C#N",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "cyano / R–CN"
+  },
+  {
+    "name": "Nitro",
+    "smiles": "[*:1][N+](=O)[O-]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–NO2"
+  },
+  {
+    "name": "Azide",
+    "smiles": "[*:1]N=[N+]=[N-]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–N3"
+  },
+  {
+    "name": "Isocyanate",
+    "smiles": "[*:1]N=C=O",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–NCO"
+  },
+  {
+    "name": "Oxime",
+    "smiles": "[*:1]C(=NO)[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "C=N–OH"
+  },
+  {
+    "name": "Hydrazine",
+    "smiles": "[*:1]NN",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–NH–NH2"
+  },
+  {
+    "name": "Carbamate",
+    "smiles": "[*:1]OC(=O)N([*:2])[*:3]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "urethane"
+  },
+  {
+    "name": "Urea",
+    "smiles": "[*:1]NC(=O)N[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–NH–CO–NH–R"
+  },
+  {
+    "name": "Guanidine",
+    "smiles": "[*:1]N=C(N[*:2])N[*:3]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Thiol",
+    "smiles": "[*:1]S",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "mercaptan / R–SH"
+  },
+  {
+    "name": "Sulfide",
+    "smiles": "[*:1]S[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "thioether / R–S–R"
+  },
+  {
+    "name": "Disulfide",
+    "smiles": "[*:1]SS[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–S–S–R"
+  },
+  {
+    "name": "Sulfoxide",
+    "smiles": "[*:1]S(=O)[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–SO–R"
+  },
+  {
+    "name": "Sulfone",
+    "smiles": "[*:1]S(=O)(=O)[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–SO2–R"
+  },
+  {
+    "name": "Sulfonic acid",
+    "smiles": "[*:1]S(=O)(=O)O",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–SO3H"
+  },
+  {
+    "name": "Sulfonamide",
+    "smiles": "[*:1]S(=O)(=O)N([*:2])[*:3]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–SO2–NR2"
+  },
+  {
+    "name": "Thioester",
+    "smiles": "[*:1]C(=O)S[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–CO–S–R"
+  },
+  {
+    "name": "Thioamide",
+    "smiles": "[*:1]C(=S)N([*:2])[*:3]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–CS–NR2"
+  },
+  {
+    "name": "Phosphate",
+    "smiles": "[*:1]OP(=O)(O)O",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "phosphate ester / R–OPO3H2"
+  },
+  {
+    "name": "Boronic acid",
+    "smiles": "[*:1]B(O)O",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–B(OH)2"
+  },
+  {
+    "name": "Acetyl",
+    "smiles": "[*:1]C(C)=O",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "Ac / ethanoyl / CH3CO–"
+  },
+  {
+    "name": "Azo",
+    "smiles": "[*:1]N=N[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "diazenyl / R–N=N–R"
+  },
+  {
+    "name": "Nitrate ester",
+    "smiles": "[*:1]O[N+](=O)[O-]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "nitrate / R–ONO2"
+  },
+  {
+    "name": "Aminal",
+    "smiles": "[*:1]NCN[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "gem-diamine"
+  },
+  {
+    "name": "Hemiacetal",
+    "smiles": "[*:1]C(O)O[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R–CH(OH)–OR"
+  },
+  {
+    "name": "Hemiaminal",
+    "smiles": "[*:1]C(O)N[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "carbinolamine / R–CH(OH)–NR2"
+  },
+  {
+    "name": "Thial",
+    "smiles": "[*:1]C=S",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "thioaldehyde / R–CHS"
+  },
+  {
+    "name": "Thioketone",
+    "smiles": "[*:1]C(=S)[*:2]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "thione / R2C=S"
+  },
+  {
+    "name": "Phosphine",
+    "smiles": "[*:1]P([*:2])[*:3]",
+    "categories": [
+      "Functional groups"
+    ],
+    "abbrev": "R3P / phosphane"
+  },
+  {
+    "name": "Boc",
+    "smiles": "[*:1]NC(=O)OC(C)(C)C",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "tert-butoxycarbonyl / Boc"
+  },
+  {
+    "name": "Cbz",
+    "smiles": "[*:1]NC(=O)OCc1ccccc1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "benzyloxycarbonyl / Cbz / Z"
+  },
+  {
+    "name": "Fmoc",
+    "smiles": "[*:1]NC(=O)OCC1c2ccccc2-c2ccccc21",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "fluorenylmethyloxycarbonyl / Fmoc"
+  },
+  {
+    "name": "Troc",
+    "smiles": "[*:1]NC(=O)OCC(Cl)(Cl)Cl",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "trichloroethoxycarbonyl / Troc"
+  },
+  {
+    "name": "Acetamide",
+    "smiles": "[*:1]NC(C)=O",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "N-acetyl / Ac"
+  },
+  {
+    "name": "Trifluoroacetamide",
+    "smiles": "[*:1]NC(=O)C(F)(F)F",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "N-TFA"
+  },
+  {
+    "name": "Tosylamide",
+    "smiles": "[*:1]NS(=O)(=O)c1ccc(C)cc1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "tosyl / Ts / N-Ts"
+  },
+  {
+    "name": "N-Benzylamine",
+    "smiles": "[*:1]NCc1ccccc1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "N-benzyl / Bn"
+  },
+  {
+    "name": "TMS ether",
+    "smiles": "[*:1]O[Si](C)(C)C",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "trimethylsilyl / TMS"
+  },
+  {
+    "name": "TBS ether",
+    "smiles": "[*:1]O[Si](C)(C)C(C)(C)C",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "TBS / TBDMS"
+  },
+  {
+    "name": "TIPS ether",
+    "smiles": "[*:1]O[Si](C(C)C)(C(C)C)C(C)C",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "triisopropylsilyl / TIPS"
+  },
+  {
+    "name": "TBDPS ether",
+    "smiles": "[*:1]O[Si](c1ccccc1)(c1ccccc1)C(C)(C)C",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "TBDPS"
+  },
+  {
+    "name": "Benzyl ether",
+    "smiles": "[*:1]OCc1ccccc1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "O-benzyl / OBn"
+  },
+  {
+    "name": "PMB ether",
+    "smiles": "[*:1]OCc1ccc(OC)cc1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "p-methoxybenzyl / PMB"
+  },
+  {
+    "name": "MOM ether",
+    "smiles": "[*:1]OCOC",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "methoxymethyl / MOM"
+  },
+  {
+    "name": "THP ether",
+    "smiles": "[*:1]OC1CCCCO1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "tetrahydropyranyl / THP"
+  },
+  {
+    "name": "Trityl ether",
+    "smiles": "[*:1]OC(c1ccccc1)(c1ccccc1)c1ccccc1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "trityl / Tr / triphenylmethyl"
+  },
+  {
+    "name": "Acetate ester",
+    "smiles": "[*:1]OC(C)=O",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "O-acetyl / OAc"
+  },
+  {
+    "name": "Pivaloate",
+    "smiles": "[*:1]OC(=O)C(C)(C)C",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "pivaloyl / Piv"
+  },
+  {
+    "name": "Benzoate",
+    "smiles": "[*:1]OC(=O)c1ccccc1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "benzoyl / Bz"
+  },
+  {
+    "name": "Allyl ether",
+    "smiles": "[*:1]OCC=C",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "O-allyl"
+  },
+  {
+    "name": "Methyl ester",
+    "smiles": "[*:1]C(=O)OC",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "CO2Me"
+  },
+  {
+    "name": "tert-Butyl ester",
+    "smiles": "[*:1]C(=O)OC(C)(C)C",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "CO2tBu"
+  },
+  {
+    "name": "Benzyl ester",
+    "smiles": "[*:1]C(=O)OCc1ccccc1",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "CO2Bn"
+  },
+  {
+    "name": "Acetonide",
+    "smiles": "[*:1]OC(C)(C)O[*:2]",
+    "categories": [
+      "Protecting groups"
+    ],
+    "abbrev": "isopropylidene"
+  },
+  {
+    "name": "Retinol",
+    "smiles": "CC1=C(C=CC(C)=CC=CC(C)=CCO)C(C)(C)CCC1",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin A"
+  },
+  {
+    "name": "Thiamine",
+    "smiles": "Cc1ncc(C[n+]2csc(CCO)c2C)c(N)n1",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin B1 / B1"
+  },
+  {
+    "name": "Riboflavin",
+    "smiles": "Cc1cc2nc3c(=O)[nH]c(=O)nc-3n(CC(O)C(O)C(O)CO)c2cc1C",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin B2 / B2"
+  },
+  {
+    "name": "Niacin",
+    "smiles": "O=C(O)c1cccnc1",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin B3 / nicotinic acid"
+  },
+  {
+    "name": "Pantothenic acid",
+    "smiles": "CC(C)(CO)C(O)C(=O)NCCC(=O)O",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin B5"
+  },
+  {
+    "name": "Pyridoxine",
+    "smiles": "Cc1ncc(CO)c(CO)c1O",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin B6"
+  },
+  {
+    "name": "Biotin",
+    "smiles": "O=C(O)CCCCC1SCC2NC(=O)NC12",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin B7 / vitamin H"
+  },
+  {
+    "name": "Folic acid",
+    "smiles": "Nc1nc2ncc(CNc3ccc(C(=O)NC(CCC(=O)O)C(=O)O)cc3)nc2c(=O)[nH]1",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin B9 / folate"
+  },
+  {
+    "name": "Ascorbic acid",
+    "smiles": "OCC(O)C1OC(=O)C(O)=C1O",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin C"
+  },
+  {
+    "name": "Cholecalciferol",
+    "smiles": "CC(CCCC(C)C)C1CCC2C(=CC=C3CC(O)CCC3=C)CCCC12C",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin D3"
+  },
+  {
+    "name": "α-Tocopherol",
+    "smiles": "Cc1c(C)c2c(c(C)c1O)CCC(C)(CCCC(C)CCCC(C)CCCC(C)C)O2",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin E"
+  },
+  {
+    "name": "Phylloquinone",
+    "smiles": "CC(C)CCCC(C)CCCC(C)CCCC(C)=CCc1c(C)c(=O)c2ccccc2c1=O",
+    "categories": [
+      "Vitamins"
+    ],
+    "abbrev": "vitamin K1 / vitamin K"
   }
 ]
