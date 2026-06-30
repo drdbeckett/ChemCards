@@ -22,6 +22,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from streamlit_cookies_controller import CookieController
 from streamlit_ketcher import st_ketcher
+from StreamJSME import StreamJSME
 from rdkit import Chem, DataStructs
 from rdkit.Chem import Descriptors, rdMolDescriptors, rdFMCS, rdFingerprintGenerator
 from rdkit.Chem.Draw import rdMolDraw2D
@@ -297,7 +298,7 @@ def grade(solved: bool):
 # ---------------------------------------------------------------------------
 COOKIE_KEY = "chemcards"
 DEFAULT_SETTINGS = {"daily_cats": [], "daily_n": 20, "streak": 0,
-                    "last_completed": None}
+                    "last_completed": None, "editor": "Ketcher"}
 # Show the Storage debug panel only when enabled. Set True here, or append
 # ?debug=1 to the app URL to toggle it on without editing the file.
 DEBUG = False
@@ -517,7 +518,27 @@ with st.sidebar:
     mode = st.radio("Study direction",
                     ["Structure \u2192 Name", "Name \u2192 Structure"],
                     help="Structure->Name: type the name. "
-                         "Name->Structure: draw it in Ketcher.")
+                         "Name->Structure: build the structure.")
+
+    # Structure-input method (used in Name->Structure), remembered across visits.
+    EDITORS = ["Ketcher", "JSME", "SMILES"]
+    EDITOR_LABELS = {"Ketcher": "Ketcher (desktop)",
+                     "JSME": "JSME (touch-friendly)",
+                     "SMILES": "Type SMILES"}
+    st.session_state.setdefault("editor_widget", "Ketcher")
+    if ss.get("_cookie_synced") and not ss.get("_editor_hydrated"):
+        val = ss.settings.get("editor", "Ketcher")
+        st.session_state["editor_widget"] = val if val in EDITORS else "Ketcher"
+        ss._editor_hydrated = True
+    editor = st.radio("Structure input", EDITORS,
+                      format_func=lambda e: EDITOR_LABELS[e],
+                      key="editor_widget",
+                      help="On a phone, JSME or Type SMILES work better than "
+                           "Ketcher.")
+    if editor != ss.settings.get("editor"):
+        ss.settings["editor"] = editor
+        save_settings()
+
     show_hints = st.checkbox("Show formula + MW with answer", value=True)
     st.metric("Session score", f"{ss.correct}/{ss.seen}" if ss.seen else "0/0")
     if st.button("Clear stats", use_container_width=True):
@@ -634,43 +655,62 @@ if struct_front:
             st.code(card["canonical"], language=None)
 
 # ===========================================================================
-# MODE B: Name -> Structure  (draw it in Ketcher)
+# MODE B: Name -> Structure  (build it via Ketcher, JSME, or typed SMILES)
 # ===========================================================================
 else:
     st.markdown(f"### {card['name']}")
     if card.get("abbrev"):
         st.caption(card["abbrev"])
-    st.caption("Draw the structure, then click **Apply** in the editor.")
-    # On narrow screens (mobile) the editor is wider than the viewport and its
-    # atom palette gets clipped. Wrap it in a keyed container (stable CSS class
-    # st-key-ketcher_wrap), pin a minimum width on the iframe, and let the
-    # wrapper scroll horizontally. On desktop the natural width exceeds this, so
-    # nothing changes there.
-    st.markdown(
-        """
-        <style>
-        .st-key-ketcher_wrap { overflow-x: auto !important;
-                               -webkit-overflow-scrolling: touch; }
-        .st-key-ketcher_wrap iframe { min-width: 720px !important; }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-    with st.container(key="ketcher_wrap"):
-        drawn = st_ketcher(key=f"ket_{ss.nonce}", height=520)
-    # Process a drawing only once: Ketcher keeps returning the same SMILES on
-    # every rerun, so guard on `last_processed` to avoid re-counting (and the
-    # rerun loop that hid the feedback).
-    if drawn and not ss.answered and drawn != ss.last_processed:
+
+    def _evaluate(drawn):
+        """Score one submitted SMILES (from any input method), exactly once."""
+        if not drawn or ss.answered or drawn == ss.last_processed:
+            return
         gm = Chem.MolFromSmiles(drawn)
         if gm is None:
-            st.warning("Couldn't parse that drawing \u2014 redraw and Apply again.")
-        else:
-            ss.last_processed = drawn
-            ss.attempts += 1
-            ss.last_guess = drawn
-            if match_level(card["smiles"], gm) in ("exact", "constitution"):
-                grade(True)
+            st.warning("Couldn't parse that structure \u2014 check it and try again.")
+            return
+        ss.last_processed = drawn
+        ss.attempts += 1
+        ss.last_guess = drawn
+        if match_level(card["smiles"], gm) in ("exact", "constitution"):
+            grade(True)
+
+    if editor == "Ketcher":
+        st.caption("Draw the structure, then click **Apply** in the editor.")
+        # On narrow screens Ketcher is wider than the viewport and its atom
+        # palette clips. Wrap it in a keyed container (stable CSS class), pin a
+        # minimum width, and let the wrapper scroll horizontally.
+        st.markdown(
+            """
+            <style>
+            .st-key-ketcher_wrap { overflow-x: auto !important;
+                                   -webkit-overflow-scrolling: touch; }
+            .st-key-ketcher_wrap iframe { min-width: 720px !important; }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
+        with st.container(key="ketcher_wrap"):
+            drawn = st_ketcher(key=f"ket_{ss.nonce}", height=520)
+        _evaluate(drawn)  # Ketcher returns the SMILES on Apply
+    elif editor == "JSME":
+        st.caption("Draw the structure, then tap **Check structure**.")
+        js = StreamJSME(smiles="", height=360, width=360, key=f"jsme_{ss.nonce}")
+        if not ss.answered:
+            if st.button("Check structure", type="primary",
+                         use_container_width=True, disabled=not js):
+                _evaluate(js)
+    else:  # SMILES
+        st.caption("Type the SMILES string for this molecule.")
+        with st.form(key=f"smiles_form_{ss.nonce}", clear_on_submit=False):
+            txt = st.text_input("SMILES",
+                                placeholder="e.g. CC(=O)Oc1ccccc1C(=O)O")
+            sub = st.form_submit_button("Check", type="primary",
+                                        use_container_width=True)
+        if sub and txt.strip():
+            _evaluate(txt.strip())
+
     if not ss.answered:
         if st.button("Reveal answer / I give up", use_container_width=True):
             grade(False)
@@ -715,8 +755,8 @@ else:
             st.markdown(f"**{card['formula']}**  \u2022  MW {card['mw']}")
         st.code(card["canonical"], language=None)
     elif not ss.last_guess:
-        st.caption("Draw the molecule above and click Apply to see how "
-                   "close you are.")
+        st.caption("Build the molecule above and submit it to see how close "
+                   "you are.")
 
 
 # ---------------------------------------------------------------------------
