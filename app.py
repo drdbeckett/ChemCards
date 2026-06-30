@@ -641,6 +641,21 @@ else:
     if card.get("abbrev"):
         st.caption(card["abbrev"])
     st.caption("Draw the structure, then click **Apply** in the editor.")
+    # On narrow screens (mobile) the editor is wider than the viewport and its
+    # atom palette gets clipped. Pin a minimum width and let the container scroll
+    # horizontally; on desktop the natural width exceeds this, so nothing changes.
+    st.markdown(
+        """
+        <style>
+        iframe[title="streamlit_ketcher"] { min-width: 720px !important; }
+        [data-testid="stElementContainer"]:has(iframe[title="streamlit_ketcher"]) {
+            overflow-x: auto !important;
+            -webkit-overflow-scrolling: touch;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
     drawn = st_ketcher(key=f"ket_{ss.nonce}", height=520)
     # Process a drawing only once: Ketcher keeps returning the same SMILES on
     # every rerun, so guard on `last_processed` to avoid re-counting (and the
