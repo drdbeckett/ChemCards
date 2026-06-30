@@ -1,0 +1,5 @@
+streamlit>=1.30
+streamlit-ketcher>=0.0.1
+streamlit-cookies-controller>=0.0.4
+rdkit>=2023.9
+pandas>=1.5
