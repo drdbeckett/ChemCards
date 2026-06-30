@@ -98,7 +98,7 @@ free-base/free-acid parent forms (not salts).
 
 ### Categories in the shipped deck
 
-Biomolecules: Amino acids (20), Neurotransmitters (11), Nucleic acid bases (5).
+Biomolecules: Amino acids (20), Neurotransmitters (11), Nucleobases (5).
 Glycine, aspartic acid, and glutamic acid are tagged as both amino acids and
 neurotransmitters. Drug classes (all also tagged `Drugs`, the 149-compound
 catch-all): Antipsychotics (16), SSRIs/SNRIs (14), Sedatives & anxiolytics (20),
@@ -111,5 +111,19 @@ allowed where appropriate (e.g. tramadol is an opioid and an SNRI).
 
 ## Deploy on Streamlit Community Cloud
 
-Push the folder to GitHub and point an app at `app.py`; `requirements.txt`
-installs RDKit, Ketcher, and pandas automatically.
+Push the folder (including `requirements.txt` **and** `packages.txt`) to GitHub
+and point an app at `app.py`.
+
+- `requirements.txt` installs the Python deps (RDKit, Ketcher, cookies
+  controller, pandas).
+- `packages.txt` installs the system libraries RDKit's drawing module needs
+  (`libxrender1`, `libxext6`, `libsm6`). Without it you get an ImportError on
+  `from rdkit.Chem.Draw import rdMolDraw2D` even though plain RDKit imports —
+  the compiled `rdMolDraw2D` extension links against these libs.
+
+**Python version:** in the app's Advanced settings choose Python 3.12 (or 3.11).
+Very new interpreters (e.g. 3.14) may not yet have compatible wheels for every
+dependency. If you already deployed on a newer version, reboot the app from the
+Cloud dashboard and lower the Python version, then redeploy so the system
+packages and wheels are picked up.
+
