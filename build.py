@@ -38,12 +38,12 @@ DATA = [
  ("Acetylcholine","CC(=O)OCC[N+](C)(C)C",["Neurotransmitters"],"ACh",E),
  ("Histamine","NCCc1c[nH]cn1",["Neurotransmitters"],"",E),
  ("Melatonin","COc1ccc2[nH]cc(CCNC(C)=O)c2c1",["Neurotransmitters"],"",E),
- # ---- Nucleic acid bases ----
- ("Adenine","Nc1ncnc2[nH]cnc12",["Nucleic acid bases"],"A",E),
- ("Guanine","Nc1nc2[nH]cnc2c(=O)[nH]1",["Nucleic acid bases"],"G",E),
- ("Cytosine","Nc1cc[nH]c(=O)n1",["Nucleic acid bases"],"C",E),
- ("Thymine","Cc1c[nH]c(=O)[nH]c1=O",["Nucleic acid bases"],"T",E),
- ("Uracil","O=c1cc[nH]c(=O)[nH]1",["Nucleic acid bases"],"U",E),
+ # ---- Nucleobases ----
+ ("Adenine","Nc1ncnc2[nH]cnc12",["Nucleobases"],"A",E),
+ ("Guanine","Nc1nc2[nH]cnc2c(=O)[nH]1",["Nucleobases"],"G",E),
+ ("Cytosine","Nc1cc[nH]c(=O)n1",["Nucleobases"],"C",E),
+ ("Thymine","Cc1c[nH]c(=O)[nH]c1=O",["Nucleobases"],"T",E),
+ ("Uracil","O=c1cc[nH]c(=O)[nH]1",["Nucleobases"],"U",E),
 
  # ============ DRUGS ============
  # ---- Antipsychotics ----
@@ -244,6 +244,135 @@ DATA = [
  ("Atenolol","CC(C)NCC(O)COc1ccc(CC(N)=O)cc1",["Drugs","Others"],"Tenormin","C14H22N2O3"),
  ("Salbutamol","CC(C)(C)NCC(O)c1ccc(O)c(CO)c1",["Drugs","Others"],"albuterol / Ventolin","C13H21NO3"),
  ("Acyclovir","Nc1nc2n(COCCO)cnc2c(=O)[nH]1",["Drugs","Others"],"aciclovir / Zovirax","C8H11N5O3"),
+ # ---- Heterocycles (ring scaffolds; not drugs) ----
+ # 5-membered, 1 heteroatom
+ ("Pyrrole","c1cc[nH]c1",["Heterocycles"],"","C4H5N"),
+ ("Furan","c1ccoc1",["Heterocycles"],"","C4H4O"),
+ ("Thiophene","c1ccsc1",["Heterocycles"],"","C4H4S"),
+ ("Pyrrolidine","C1CCNC1",["Heterocycles"],"azolidine","C4H9N"),
+ ("Tetrahydrofuran","C1CCOC1",["Heterocycles"],"THF / oxolane","C4H8O"),
+ ("Tetrahydrothiophene","C1CCSC1",["Heterocycles"],"thiolane","C4H8S"),
+ # 5-membered, 2 heteroatoms
+ ("Imidazole","c1c[nH]cn1",["Heterocycles"],"1,3-diazole","C3H4N2"),
+ ("Pyrazole","c1cc[nH]n1",["Heterocycles"],"1,2-diazole","C3H4N2"),
+ ("Oxazole","c1ocnc1",["Heterocycles"],"1,3-oxazole","C3H3NO"),
+ ("Isoxazole","c1ccon1",["Heterocycles"],"1,2-oxazole","C3H3NO"),
+ ("Thiazole","c1cscn1",["Heterocycles"],"1,3-thiazole","C3H3NS"),
+ ("Isothiazole","c1ccsn1",["Heterocycles"],"1,2-thiazole","C3H3NS"),
+ ("Imidazolidine","C1CNCN1",["Heterocycles"],"","C3H8N2"),
+ ("Pyrazolidine","C1CNNC1",["Heterocycles"],"","C3H8N2"),
+ ("Oxazolidine","C1OCNC1",["Heterocycles"],"1,3-oxazolidine","C3H7NO"),
+ ("Thiazolidine","C1SCNC1",["Heterocycles"],"1,3-thiazolidine","C3H7NS"),
+ ("1,3-Dioxolane","C1OCOC1",["Heterocycles"],"","C3H6O2"),
+ ("1,3-Dithiolane","C1SCSC1",["Heterocycles"],"","C3H6S2"),
+ ("2-Oxazoline","C1COC=N1",["Heterocycles"],"4,5-dihydrooxazole","C3H5NO"),
+ ("2-Imidazoline","C1CN=CN1",["Heterocycles"],"4,5-dihydroimidazole","C3H6N2"),
+ ("2-Thiazoline","C1CSC=N1",["Heterocycles"],"4,5-dihydrothiazole","C3H5NS"),
+ # 5-membered, 3-4 heteroatoms
+ ("1,2,3-Triazole","c1cn[nH]n1",["Heterocycles"],"","C2H3N3"),
+ ("1,2,4-Triazole","c1nc[nH]n1",["Heterocycles"],"","C2H3N3"),
+ ("1,2,4-Oxadiazole","c1ncon1",["Heterocycles"],"","C2H2N2O"),
+ ("1,3,4-Oxadiazole","c1nnco1",["Heterocycles"],"","C2H2N2O"),
+ ("1,2,5-Oxadiazole","c1cnon1",["Heterocycles"],"furazan","C2H2N2O"),
+ ("1,2,4-Thiadiazole","c1ncsn1",["Heterocycles"],"","C2H2N2S"),
+ ("1,3,4-Thiadiazole","c1nncs1",["Heterocycles"],"","C2H2N2S"),
+ ("1,2,5-Thiadiazole","c1cnsn1",["Heterocycles"],"","C2H2N2S"),
+ ("Tetrazole","c1nnn[nH]1",["Heterocycles"],"","CH2N4"),
+ # 6-membered, 1 heteroatom
+ ("Pyridine","c1ccncc1",["Heterocycles"],"azine","C5H5N"),
+ ("Piperidine","C1CCNCC1",["Heterocycles"],"","C5H11N"),
+ ("Tetrahydropyran","C1CCOCC1",["Heterocycles"],"oxane / THP","C5H10O"),
+ ("Thiane","C1CCSCC1",["Heterocycles"],"tetrahydrothiopyran","C5H10S"),
+ ("1,4-Dihydropyridine","C1C=CNC=C1",["Heterocycles"],"1,4-DHP","C5H7N"),
+ ("2-Pyridone","O=c1cccc[nH]1",["Heterocycles"],"2-pyridinone","C5H5NO"),
+ ("4-Pyridone","O=c1cc[nH]cc1",["Heterocycles"],"4-pyridinone","C5H5NO"),
+ ("2-Pyranone","O=c1cccco1",["Heterocycles"],"\u03b1-pyrone","C5H4O2"),
+ ("4-Pyranone","O=c1ccocc1",["Heterocycles"],"\u03b3-pyrone","C5H4O2"),
+ # 6-membered, 2-3 heteroatoms
+ ("Pyrimidine","c1cncnc1",["Heterocycles"],"1,3-diazine","C4H4N2"),
+ ("Pyrazine","c1cnccn1",["Heterocycles"],"1,4-diazine","C4H4N2"),
+ ("Pyridazine","c1ccnnc1",["Heterocycles"],"1,2-diazine","C4H4N2"),
+ ("Piperazine","C1CNCCN1",["Heterocycles"],"","C4H10N2"),
+ ("Morpholine","C1COCCN1",["Heterocycles"],"1,4-oxazinane","C4H9NO"),
+ ("Thiomorpholine","C1CSCCN1",["Heterocycles"],"","C4H9NS"),
+ ("1,4-Dioxane","C1COCCO1",["Heterocycles"],"","C4H8O2"),
+ ("1,3-Dioxane","C1OCOCC1",["Heterocycles"],"","C4H8O2"),
+ ("1,4-Dithiane","C1CSCCS1",["Heterocycles"],"","C4H8S2"),
+ ("1,3-Dithiane","C1SCSCC1",["Heterocycles"],"","C4H8S2"),
+ ("1,3,5-Triazine","c1ncncn1",["Heterocycles"],"s-triazine","C3H3N3"),
+ ("1,2,4-Triazine","c1cnncn1",["Heterocycles"],"","C3H3N3"),
+ ("1,3,5-Trioxane","C1OCOCO1",["Heterocycles"],"","C3H6O3"),
+ ("1,3,5-Trithiane","C1SCSCS1",["Heterocycles"],"","C3H6S3"),
+ # 3-, 4-, 7-membered
+ ("Aziridine","C1CN1",["Heterocycles"],"","C2H5N"),
+ ("Azetidine","C1CNC1",["Heterocycles"],"","C3H7N"),
+ ("Oxirane","C1CO1",["Heterocycles"],"epoxide / ethylene oxide","C2H4O"),
+ ("Oxetane","C1COC1",["Heterocycles"],"","C3H6O"),
+ ("Thiirane","C1CS1",["Heterocycles"],"episulfide","C2H4S"),
+ ("Thietane","C1CSC1",["Heterocycles"],"","C3H6S"),
+ ("Azepane","C1CCCNCC1",["Heterocycles"],"homopiperidine","C6H13N"),
+ ("Oxepane","C1CCCOCC1",["Heterocycles"],"","C6H12O"),
+ ("1,4-Diazepane","C1CNCCNC1",["Heterocycles"],"homopiperazine","C5H12N2"),
+ # bicyclic saturated / partly saturated
+ ("Quinuclidine","C1CN2CCC1CC2",["Heterocycles"],"","C7H13N"),
+ ("Tropane","CN1C2CCC1CCC2",["Heterocycles"],"","C8H15N"),
+ ("Indoline","C1Cc2ccccc2N1",["Heterocycles"],"2,3-dihydroindole","C8H9N"),
+ ("Chromane","C1CCc2ccccc2O1",["Heterocycles"],"3,4-dihydro-2H-chromene","C9H10O"),
+ ("Isochromane","C1OCc2ccccc2C1",["Heterocycles"],"","C9H10O"),
+ ("Tetrahydroquinoline","C1CCc2ccccc2N1",["Heterocycles"],"1,2,3,4-THQ","C9H11N"),
+ ("Tetrahydroisoquinoline","C1Cc2ccccc2CN1",["Heterocycles"],"THIQ","C9H11N"),
+ # aromatic fused bicyclic
+ ("Indole","c1ccc2[nH]ccc2c1",["Heterocycles"],"benzo[b]pyrrole","C8H7N"),
+ ("Isoindole","c1ccc2c[nH]cc2c1",["Heterocycles"],"","C8H7N"),
+ ("Indolizine","c1ccn2ccccc12",["Heterocycles"],"","C8H7N"),
+ ("Benzofuran","c1ccc2occc2c1",["Heterocycles"],"","C8H6O"),
+ ("Benzothiophene","c1ccc2sccc2c1",["Heterocycles"],"thianaphthene","C8H6S"),
+ ("Indazole","c1ccc2[nH]ncc2c1",["Heterocycles"],"","C7H6N2"),
+ ("Benzimidazole","c1ccc2[nH]cnc2c1",["Heterocycles"],"","C7H6N2"),
+ ("Benzoxazole","c1ccc2ocnc2c1",["Heterocycles"],"","C7H5NO"),
+ ("Benzothiazole","c1ccc2scnc2c1",["Heterocycles"],"","C7H5NS"),
+ ("Benzotriazole","c1ccc2[nH]nnc2c1",["Heterocycles"],"","C6H5N3"),
+ ("Purine","c1ncc2[nH]cnc2n1",["Heterocycles"],"","C5H4N4"),
+ ("Quinoline","c1ccc2ncccc2c1",["Heterocycles"],"benzo[b]pyridine","C9H7N"),
+ ("Isoquinoline","c1ccc2cnccc2c1",["Heterocycles"],"","C9H7N"),
+ ("Quinoxaline","c1ccc2nccnc2c1",["Heterocycles"],"","C8H6N2"),
+ ("Quinazoline","c1ccc2ncncc2c1",["Heterocycles"],"","C8H6N2"),
+ ("Phthalazine","c1ccc2cnncc2c1",["Heterocycles"],"","C8H6N2"),
+ ("Cinnoline","c1ccc2c(c1)ccnn2",["Heterocycles"],"","C8H6N2"),
+ ("1,8-Naphthyridine","c1ccc2cccnc2n1",["Heterocycles"],"","C8H6N2"),
+ ("Pteridine","c1cnc2nccnc2n1",["Heterocycles"],"","C6H4N4"),
+ # tricyclic
+ ("Carbazole","c1ccc2c(c1)[nH]c1ccccc12",["Heterocycles"],"","C12H9N"),
+ ("Dibenzofuran","c1ccc2c(c1)oc1ccccc12",["Heterocycles"],"","C12H8O"),
+ ("Dibenzothiophene","c1ccc2c(c1)sc1ccccc12",["Heterocycles"],"","C12H8S"),
+ ("Acridine","c1ccc2nc3ccccc3cc2c1",["Heterocycles"],"","C13H9N"),
+ ("Phenazine","c1ccc2nc3ccccc3nc2c1",["Heterocycles"],"","C12H8N2"),
+ ("Phenothiazine","c1ccc2c(c1)Nc1ccccc1S2",["Heterocycles"],"","C12H9NS"),
+ ("Phenoxazine","c1ccc2c(c1)Nc1ccccc1O2",["Heterocycles"],"","C12H9NO"),
+ ("Xanthene","C1c2ccccc2Oc2ccccc21",["Heterocycles"],"","C13H10O"),
+ # benzo-fused oxygen heterocycles / fused carbonyls
+ ("Coumarin","O=c1ccc2ccccc2o1",["Heterocycles"],"2H-chromen-2-one","C9H6O2"),
+ ("Chromone","O=c1ccoc2ccccc12",["Heterocycles"],"4H-chromen-4-one","C9H6O2"),
+ ("1,3-Benzodioxole","c1ccc2c(c1)OCO2",["Heterocycles"],"methylenedioxybenzene","C7H6O2"),
+ ("1,4-Benzodioxane","C1COc2ccccc2O1",["Heterocycles"],"","C8H8O2"),
+ ("Phthalimide","O=C1c2ccccc2C(=O)N1",["Heterocycles"],"isoindole-1,3-dione","C8H5NO2"),
+ ("Oxindole","O=C1Cc2ccccc2N1",["Heterocycles"],"2-indolinone","C8H7NO"),
+ ("Isatin","O=C1Nc2ccccc2C1=O",["Heterocycles"],"indoline-2,3-dione","C8H5NO2"),
+ ("4-Quinolone","O=c1cc[nH]c2ccccc12",["Heterocycles"],"","C9H7NO"),
+ ("2-Quinolinone","O=c1ccc2ccccc2[nH]1",["Heterocycles"],"carbostyril","C9H7NO"),
+ # lactams, lactones, imides
+ ("\u03b2-Lactam","O=C1CCN1",["Heterocycles"],"2-azetidinone","C3H5NO"),
+ ("2-Pyrrolidinone","O=C1CCCN1",["Heterocycles"],"\u03b3-butyrolactam","C4H7NO"),
+ ("2-Piperidinone","O=C1CCCCN1",["Heterocycles"],"\u03b4-valerolactam","C5H9NO"),
+ ("Caprolactam","O=C1CCCCCN1",["Heterocycles"],"\u03b5-caprolactam","C6H11NO"),
+ ("\u03b2-Propiolactone","O=C1CCO1",["Heterocycles"],"","C3H4O2"),
+ ("\u03b3-Butyrolactone","O=C1CCCO1",["Heterocycles"],"GBL","C4H6O2"),
+ ("\u03b4-Valerolactone","O=C1CCCCO1",["Heterocycles"],"","C5H8O2"),
+ ("Succinimide","O=C1CCC(=O)N1",["Heterocycles"],"","C4H5NO2"),
+ ("Glutarimide","O=C1CCCC(=O)N1",["Heterocycles"],"","C5H7NO2"),
+ ("Maleimide","O=C1C=CC(=O)N1",["Heterocycles"],"","C4H3NO2"),
+ ("Hydantoin","O=C1CNC(=O)N1",["Heterocycles"],"imidazolidine-2,4-dione","C3H4N2O2"),
+ ("Barbituric acid","O=C1CC(=O)NC(=O)N1",["Heterocycles"],"","C4H4N2O3"),
 ]
 
 out, problems = [], []
@@ -262,6 +391,22 @@ if problems:
     print("PROBLEMS:")
     for n, msg, smi in problems:
         print(f"  - {n}: {msg}")
+    sys.exit(1)
+
+# Duplicate-structure check (canonical SMILES across the whole deck).
+from rdkit import Chem as _C
+canon = {}
+dups = []
+for c in out:
+    cs = _C.MolToSmiles(_C.MolFromSmiles(c["smiles"]))
+    if cs in canon:
+        dups.append((c["name"], canon[cs]))
+    else:
+        canon[cs] = c["name"]
+if dups:
+    print("DUPLICATE STRUCTURES:")
+    for a, b in dups:
+        print(f"  - {a} is the same molecule as {b}")
     sys.exit(1)
 
 # category counts

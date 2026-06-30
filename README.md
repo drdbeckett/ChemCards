@@ -105,8 +105,8 @@ catch-all): Antipsychotics (16), SSRIs/SNRIs (14), Sedatives & anxiolytics (20),
 Opioids (15), Stimulants (10), NSAIDs & analgesics (12), Statins (7),
 Antihistamines & allergy (16), Antibiotics (16), Antifungals (11), Others (13,
 for drugs that don't fit a class above — PPIs, anticoagulants, antihypertensives,
-a bronchodilator, an antiviral, etc.). Agrochemicals, which are **not** tagged
-`Drugs`: Insecticides (18), Herbicides (18). 218 compounds total. Overlaps are
+a bronchodilator, an antiviral, etc.). Heterocycles (117, ring scaffolds — not tagged `Drugs`). Agrochemicals, also
+not tagged `Drugs`: Insecticides (18), Herbicides (18). 335 compounds total. Overlaps are
 allowed where appropriate (e.g. tramadol is an opioid and an SNRI).
 
 ## Deploy on Streamlit Community Cloud

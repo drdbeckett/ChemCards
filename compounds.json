@@ -230,7 +230,7 @@
     "name": "Adenine",
     "smiles": "Nc1ncnc2[nH]cnc12",
     "categories": [
-      "Nucleic acid bases"
+      "Nucleobases"
     ],
     "abbrev": "A"
   },
@@ -238,7 +238,7 @@
     "name": "Guanine",
     "smiles": "Nc1nc2[nH]cnc2c(=O)[nH]1",
     "categories": [
-      "Nucleic acid bases"
+      "Nucleobases"
     ],
     "abbrev": "G"
   },
@@ -246,7 +246,7 @@
     "name": "Cytosine",
     "smiles": "Nc1cc[nH]c(=O)n1",
     "categories": [
-      "Nucleic acid bases"
+      "Nucleobases"
     ],
     "abbrev": "C"
   },
@@ -254,7 +254,7 @@
     "name": "Thymine",
     "smiles": "Cc1c[nH]c(=O)[nH]c1=O",
     "categories": [
-      "Nucleic acid bases"
+      "Nucleobases"
     ],
     "abbrev": "T"
   },
@@ -262,7 +262,7 @@
     "name": "Uracil",
     "smiles": "O=c1cc[nH]c(=O)[nH]1",
     "categories": [
-      "Nucleic acid bases"
+      "Nucleobases"
     ],
     "abbrev": "U"
   },
@@ -1895,5 +1895,941 @@
       "Others"
     ],
     "abbrev": "aciclovir / Zovirax"
+  },
+  {
+    "name": "Pyrrole",
+    "smiles": "c1cc[nH]c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Furan",
+    "smiles": "c1ccoc1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Thiophene",
+    "smiles": "c1ccsc1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Pyrrolidine",
+    "smiles": "C1CCNC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "azolidine"
+  },
+  {
+    "name": "Tetrahydrofuran",
+    "smiles": "C1CCOC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "THF / oxolane"
+  },
+  {
+    "name": "Tetrahydrothiophene",
+    "smiles": "C1CCSC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "thiolane"
+  },
+  {
+    "name": "Imidazole",
+    "smiles": "c1c[nH]cn1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,3-diazole"
+  },
+  {
+    "name": "Pyrazole",
+    "smiles": "c1cc[nH]n1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,2-diazole"
+  },
+  {
+    "name": "Oxazole",
+    "smiles": "c1ocnc1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,3-oxazole"
+  },
+  {
+    "name": "Isoxazole",
+    "smiles": "c1ccon1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,2-oxazole"
+  },
+  {
+    "name": "Thiazole",
+    "smiles": "c1cscn1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,3-thiazole"
+  },
+  {
+    "name": "Isothiazole",
+    "smiles": "c1ccsn1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,2-thiazole"
+  },
+  {
+    "name": "Imidazolidine",
+    "smiles": "C1CNCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Pyrazolidine",
+    "smiles": "C1CNNC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Oxazolidine",
+    "smiles": "C1OCNC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,3-oxazolidine"
+  },
+  {
+    "name": "Thiazolidine",
+    "smiles": "C1SCNC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,3-thiazolidine"
+  },
+  {
+    "name": "1,3-Dioxolane",
+    "smiles": "C1OCOC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,3-Dithiolane",
+    "smiles": "C1SCSC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "2-Oxazoline",
+    "smiles": "C1COC=N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "4,5-dihydrooxazole"
+  },
+  {
+    "name": "2-Imidazoline",
+    "smiles": "C1CN=CN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "4,5-dihydroimidazole"
+  },
+  {
+    "name": "2-Thiazoline",
+    "smiles": "C1CSC=N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "4,5-dihydrothiazole"
+  },
+  {
+    "name": "1,2,3-Triazole",
+    "smiles": "c1cn[nH]n1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,2,4-Triazole",
+    "smiles": "c1nc[nH]n1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,2,4-Oxadiazole",
+    "smiles": "c1ncon1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,3,4-Oxadiazole",
+    "smiles": "c1nnco1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,2,5-Oxadiazole",
+    "smiles": "c1cnon1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "furazan"
+  },
+  {
+    "name": "1,2,4-Thiadiazole",
+    "smiles": "c1ncsn1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,3,4-Thiadiazole",
+    "smiles": "c1nncs1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,2,5-Thiadiazole",
+    "smiles": "c1cnsn1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Tetrazole",
+    "smiles": "c1nnn[nH]1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Pyridine",
+    "smiles": "c1ccncc1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "azine"
+  },
+  {
+    "name": "Piperidine",
+    "smiles": "C1CCNCC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Tetrahydropyran",
+    "smiles": "C1CCOCC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "oxane / THP"
+  },
+  {
+    "name": "Thiane",
+    "smiles": "C1CCSCC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "tetrahydrothiopyran"
+  },
+  {
+    "name": "1,4-Dihydropyridine",
+    "smiles": "C1C=CNC=C1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,4-DHP"
+  },
+  {
+    "name": "2-Pyridone",
+    "smiles": "O=c1cccc[nH]1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2-pyridinone"
+  },
+  {
+    "name": "4-Pyridone",
+    "smiles": "O=c1cc[nH]cc1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "4-pyridinone"
+  },
+  {
+    "name": "2-Pyranone",
+    "smiles": "O=c1cccco1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "α-pyrone"
+  },
+  {
+    "name": "4-Pyranone",
+    "smiles": "O=c1ccocc1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "γ-pyrone"
+  },
+  {
+    "name": "Pyrimidine",
+    "smiles": "c1cncnc1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,3-diazine"
+  },
+  {
+    "name": "Pyrazine",
+    "smiles": "c1cnccn1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,4-diazine"
+  },
+  {
+    "name": "Pyridazine",
+    "smiles": "c1ccnnc1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,2-diazine"
+  },
+  {
+    "name": "Piperazine",
+    "smiles": "C1CNCCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Morpholine",
+    "smiles": "C1COCCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,4-oxazinane"
+  },
+  {
+    "name": "Thiomorpholine",
+    "smiles": "C1CSCCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,4-Dioxane",
+    "smiles": "C1COCCO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,3-Dioxane",
+    "smiles": "C1OCOCC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,4-Dithiane",
+    "smiles": "C1CSCCS1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,3-Dithiane",
+    "smiles": "C1SCSCC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,3,5-Triazine",
+    "smiles": "c1ncncn1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "s-triazine"
+  },
+  {
+    "name": "1,2,4-Triazine",
+    "smiles": "c1cnncn1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,3,5-Trioxane",
+    "smiles": "C1OCOCO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,3,5-Trithiane",
+    "smiles": "C1SCSCS1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Aziridine",
+    "smiles": "C1CN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Azetidine",
+    "smiles": "C1CNC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Oxirane",
+    "smiles": "C1CO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "epoxide / ethylene oxide"
+  },
+  {
+    "name": "Oxetane",
+    "smiles": "C1COC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Thiirane",
+    "smiles": "C1CS1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "episulfide"
+  },
+  {
+    "name": "Thietane",
+    "smiles": "C1CSC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Azepane",
+    "smiles": "C1CCCNCC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "homopiperidine"
+  },
+  {
+    "name": "Oxepane",
+    "smiles": "C1CCCOCC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,4-Diazepane",
+    "smiles": "C1CNCCNC1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "homopiperazine"
+  },
+  {
+    "name": "Quinuclidine",
+    "smiles": "C1CN2CCC1CC2",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Tropane",
+    "smiles": "CN1C2CCC1CCC2",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Indoline",
+    "smiles": "C1Cc2ccccc2N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2,3-dihydroindole"
+  },
+  {
+    "name": "Chromane",
+    "smiles": "C1CCc2ccccc2O1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "3,4-dihydro-2H-chromene"
+  },
+  {
+    "name": "Isochromane",
+    "smiles": "C1OCc2ccccc2C1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Tetrahydroquinoline",
+    "smiles": "C1CCc2ccccc2N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "1,2,3,4-THQ"
+  },
+  {
+    "name": "Tetrahydroisoquinoline",
+    "smiles": "C1Cc2ccccc2CN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "THIQ"
+  },
+  {
+    "name": "Indole",
+    "smiles": "c1ccc2[nH]ccc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "benzo[b]pyrrole"
+  },
+  {
+    "name": "Isoindole",
+    "smiles": "c1ccc2c[nH]cc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Indolizine",
+    "smiles": "c1ccn2ccccc12",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Benzofuran",
+    "smiles": "c1ccc2occc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Benzothiophene",
+    "smiles": "c1ccc2sccc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "thianaphthene"
+  },
+  {
+    "name": "Indazole",
+    "smiles": "c1ccc2[nH]ncc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Benzimidazole",
+    "smiles": "c1ccc2[nH]cnc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Benzoxazole",
+    "smiles": "c1ccc2ocnc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Benzothiazole",
+    "smiles": "c1ccc2scnc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Benzotriazole",
+    "smiles": "c1ccc2[nH]nnc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Purine",
+    "smiles": "c1ncc2[nH]cnc2n1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Quinoline",
+    "smiles": "c1ccc2ncccc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "benzo[b]pyridine"
+  },
+  {
+    "name": "Isoquinoline",
+    "smiles": "c1ccc2cnccc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Quinoxaline",
+    "smiles": "c1ccc2nccnc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Quinazoline",
+    "smiles": "c1ccc2ncncc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Phthalazine",
+    "smiles": "c1ccc2cnncc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Cinnoline",
+    "smiles": "c1ccc2c(c1)ccnn2",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "1,8-Naphthyridine",
+    "smiles": "c1ccc2cccnc2n1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Pteridine",
+    "smiles": "c1cnc2nccnc2n1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Carbazole",
+    "smiles": "c1ccc2c(c1)[nH]c1ccccc12",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Dibenzofuran",
+    "smiles": "c1ccc2c(c1)oc1ccccc12",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Dibenzothiophene",
+    "smiles": "c1ccc2c(c1)sc1ccccc12",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Acridine",
+    "smiles": "c1ccc2nc3ccccc3cc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Phenazine",
+    "smiles": "c1ccc2nc3ccccc3nc2c1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Phenothiazine",
+    "smiles": "c1ccc2c(c1)Nc1ccccc1S2",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Phenoxazine",
+    "smiles": "c1ccc2c(c1)Nc1ccccc1O2",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Xanthene",
+    "smiles": "C1c2ccccc2Oc2ccccc21",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Coumarin",
+    "smiles": "O=c1ccc2ccccc2o1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2H-chromen-2-one"
+  },
+  {
+    "name": "Chromone",
+    "smiles": "O=c1ccoc2ccccc12",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "4H-chromen-4-one"
+  },
+  {
+    "name": "1,3-Benzodioxole",
+    "smiles": "c1ccc2c(c1)OCO2",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "methylenedioxybenzene"
+  },
+  {
+    "name": "1,4-Benzodioxane",
+    "smiles": "C1COc2ccccc2O1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Phthalimide",
+    "smiles": "O=C1c2ccccc2C(=O)N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "isoindole-1,3-dione"
+  },
+  {
+    "name": "Oxindole",
+    "smiles": "O=C1Cc2ccccc2N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2-indolinone"
+  },
+  {
+    "name": "Isatin",
+    "smiles": "O=C1Nc2ccccc2C1=O",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "indoline-2,3-dione"
+  },
+  {
+    "name": "4-Quinolone",
+    "smiles": "O=c1cc[nH]c2ccccc12",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "2-Quinolinone",
+    "smiles": "O=c1ccc2ccccc2[nH]1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "carbostyril"
+  },
+  {
+    "name": "β-Lactam",
+    "smiles": "O=C1CCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "2-azetidinone"
+  },
+  {
+    "name": "2-Pyrrolidinone",
+    "smiles": "O=C1CCCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "γ-butyrolactam"
+  },
+  {
+    "name": "2-Piperidinone",
+    "smiles": "O=C1CCCCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "δ-valerolactam"
+  },
+  {
+    "name": "Caprolactam",
+    "smiles": "O=C1CCCCCN1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "ε-caprolactam"
+  },
+  {
+    "name": "β-Propiolactone",
+    "smiles": "O=C1CCO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "γ-Butyrolactone",
+    "smiles": "O=C1CCCO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "GBL"
+  },
+  {
+    "name": "δ-Valerolactone",
+    "smiles": "O=C1CCCCO1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Succinimide",
+    "smiles": "O=C1CCC(=O)N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Glutarimide",
+    "smiles": "O=C1CCCC(=O)N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Maleimide",
+    "smiles": "O=C1C=CC(=O)N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
+  },
+  {
+    "name": "Hydantoin",
+    "smiles": "O=C1CNC(=O)N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": "imidazolidine-2,4-dione"
+  },
+  {
+    "name": "Barbituric acid",
+    "smiles": "O=C1CC(=O)NC(=O)N1",
+    "categories": [
+      "Heterocycles"
+    ],
+    "abbrev": ""
   }
 ]
