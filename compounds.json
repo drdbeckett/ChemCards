@@ -2842,7 +2842,7 @@
     "categories": [
       "Heterocycles"
     ],
-    "abbrev": "γ-butyrolactam"
+    "abbrev": "γ-lactam"
   },
   {
     "name": "2-Piperidinone",
@@ -2850,7 +2850,7 @@
     "categories": [
       "Heterocycles"
     ],
-    "abbrev": "δ-valerolactam"
+    "abbrev": "δ-lactam"
   },
   {
     "name": "Caprolactam",
@@ -2858,7 +2858,7 @@
     "categories": [
       "Heterocycles"
     ],
-    "abbrev": "ε-caprolactam"
+    "abbrev": "ε-lactam"
   },
   {
     "name": "β-Propiolactone",
@@ -2866,7 +2866,7 @@
     "categories": [
       "Heterocycles"
     ],
-    "abbrev": ""
+    "abbrev": "β-lactone"
   },
   {
     "name": "γ-Butyrolactone",
@@ -2874,7 +2874,7 @@
     "categories": [
       "Heterocycles"
     ],
-    "abbrev": "GBL"
+    "abbrev": "γ-lactone"
   },
   {
     "name": "δ-Valerolactone",
@@ -2882,7 +2882,7 @@
     "categories": [
       "Heterocycles"
     ],
-    "abbrev": ""
+    "abbrev": "δ-lactone"
   },
   {
     "name": "Succinimide",
